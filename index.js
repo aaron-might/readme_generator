@@ -26,7 +26,7 @@ inquirer.prompt(    [
         name:'installation',
         validate:(value)=>{if (value){return true}else {return 'i need a value to continue'}}
         
-        WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+        //WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
     },
     {
         type:'input',
@@ -95,12 +95,12 @@ inquirer.prompt(    [
 ]
 )
 
-
 .then(({
+    
 title,
 description,
 installation,
-usage information, 
+usage, 
 instructions,
 linkedIn,
 contribution,
@@ -111,33 +111,29 @@ credits,
 })=>{
 
 //template to be used
-const template = require('template');
+const template =`# ${title}`
+},
+// * [Installation](# installation)
+// * [Usage](# usage)*
+
+// # ${installation}
 
 
+// // TODO: Create an array of questions for user input
+// const questions = [];
 
+// // TODO: Create a function to write README file
 
-
-const fs = require('fs');
-
-
-const inquirer = require('inquirer');
-const { title } = require('process');
-
-
-
-
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
 fs.writeFile('README', md, (err) =>
- err ? console.error(err) : console.log('Success!')
+ err ? console.error(err) : console.log('Your README has been generated!')
 );
 })
 
-// TODO: Create a function to initialize app
-function init() {}
 
-// Function call to initialize app
-init();
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
+
