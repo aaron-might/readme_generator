@@ -12,29 +12,70 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
 
-`;
-}
+  ${data.badge}
 
-module.exports = generateMarkdown;
+  # Description
 
-function renderLicenseBadge(license) {
-  let licenseType = license.license; // i think this is problem #1
-  let yourLicense = ''
-  if(licenseType === 'MIT') {
-    yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-  } else if (licenseType === 'GPLv3') {
-    yourLicense = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)`
-  } else if (licenseType === 'GPL') {
-    yourLicense = `![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)`
-  } else {
-    license.license = "N/A"
+  ${data.description}
+  ## Table of Contents
+
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Licence](#Licence)
+  - [Contributors](#Contributors)
+  - [Test](#Test)
+  - [Repository Link](#Repository)
+  - [GitHub Info](#GitHub) 
+  
+  
+  ## Installation
+  
+  ${data.installation}
+  
+  ## Usage
+  
+  ${data.usage}
+  
+  ## Licence
+  
+  ${data.licence}
+  
+  ## Contributors
+  
+  ${data.contributing}
+  
+  ## Test
+  
+  ${data.test}
+  
+  ## Repository
+  
+  - [Project Repo](${data.repo})
+  
+  ## GitHub
+  
+  ![Image of me](${githubInfo.githubImage})
+  - ${githubInfo.name}
+  - [GitHub Profile](${githubInfo.profile})
+  - <${githubInfo.email}>`;
   }
-  return yourLicense;
-};
+  
+  module.exports = generateMarkdown;
+  
 
-function generateMarkdown(data) {
 
-## license 
-return `# ${data.title} renderLicenseBadge(license) //possible problem #2?`}
+
+   
+
+
+
+
+
+
+// const renderReadMe=((answers) => {
+//   const heading = answers.title;
+//   const template =# ${answers.title}
