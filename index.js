@@ -58,18 +58,13 @@ const questions = [
     },
     {
         type: "input",
-        name: "username",
-        message: "What is your github user name?",
-    },
-    {
-        type: "input",
         name: "repo",
         message: "What is your repo link?",
     },
     {
         type: "input",
-        name: "name",
-        message: "what is your name?",
+        name: "username",
+        message: "What is your github user name?",
     },
 ];
 
@@ -89,13 +84,15 @@ inquirer
             data.badges = "https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg"
         }
 
-
+        
         axios.get(queryUrl).then(function (res) {
+           // console.log(res);
             const githubInfo = {
                 githubImage: res.data.avatar_url,
                 email: res.data.email,
                 profile: res.data.html_url,
                 name: res.data.name,
+                
             };
 
             fs.writeFile('README.md', generate(data, githubInfo), function (err) {

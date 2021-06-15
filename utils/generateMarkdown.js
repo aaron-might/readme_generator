@@ -38,6 +38,7 @@ function generateMarkdown(data, githubInfo) {
   ## Usage
   
   ${data.usage}
+  -[demo](#data.demo)
   
   ## credits
 
@@ -66,9 +67,9 @@ function generateMarkdown(data, githubInfo) {
   ## GitHub
   
   ![Image of me](${githubInfo.githubImage}),
-  - [Github name]${githubInfo.name},
-  - [GitHub Profile](${githubInfo.profile}),
-  - [Github email]<${githubInfo.email}>`
+  -![GitHub name](${githubInfo.name}),
+  -![GitHub Profile](${githubInfo.profile}),
+  - [GitHub email](${githubInfo.email})`
 }
 
 module.exports = generateMarkdown;
